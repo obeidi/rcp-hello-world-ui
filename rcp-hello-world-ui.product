@@ -16,7 +16,8 @@
    <windowImages/>
 
    <plugins>
-      <plugin id="rcp-hello-world-ui"/>
+      <plugin id="com.sun.jna"/>
+      <plugin id="com.sun.jna.platform"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="org.apache.batik.constants"/>
@@ -79,6 +80,7 @@
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.osgi.util"/>
       <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.browser.chromium.cocoa.macosx.x86_64" fragment="true"/>
       <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
       <plugin id="org.eclipse.swt.gtk.linux.ppc64" fragment="true"/>
       <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
@@ -88,6 +90,7 @@
       <plugin id="org.w3c.dom.events"/>
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
+      <plugin id="rcp-hello-world-ui"/>
    </plugins>
 
 

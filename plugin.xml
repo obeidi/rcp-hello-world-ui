@@ -13,10 +13,6 @@
                value="bundleclass://rcp-hello-world-ui/rcphelloworldui.E4LifeCycle">
          </property>
          <property
-               name="applicationCSS"
-               value="platform:/plugin/rcp-hello-world-ui/css/default.css">
-         </property>
-         <property
                name="appName"
                value="rcp-hello-world-ui">
          </property>
