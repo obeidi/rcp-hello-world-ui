@@ -7,19 +7,42 @@
  */
 
 
-plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    id 'application'
+
+
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "net.ltgt.gradle:gradle-apt-plugin:0.13"
+  }
 }
 
 
-  repositories {
+
+
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+    id 'java'
+    id 'java-library'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+//apply plugin: "net.ltgt.apt-eclipse"
+
+repositories {
         maven {
       url "https://plugins.gradle.org/m2/"
     }
     mavenLocal()
     jcenter()
-  }
+    mavenCentral()
+}
 
 
 dependencies {
@@ -28,6 +51,17 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:29.0-jre'
+    
+    implementation 'org.standardout:bnd-platform:1.7.0'
+    
+    // add pegdown as dependency to the platform configuration
+    platform 'org.pegdown:pegdown:1.4.2'
+    
+    // https://mvnrepository.com/artifact/org.osgi/org.osgi.core
+compileOnly group: 'org.osgi', name: 'org.osgi.core', version: '4.3.0'
+
+implementation "net.ltgt.gradle:gradle-apt-plugin:0.13"
+    
 }
 
 application {
@@ -35,7 +69,11 @@ application {
     mainClass = 'rcp.hello.world.ui.App'
 }
 
-apply plugin: 'java'
+//apply plugin: 'java'
+
+sourceCompatibility = 1.8
+//apply plugin: 'org.standardout.bnd-platform'
+
 jar {
     manifest {
         attributes 'Main-Class': 'rcp.hello.world.ui.App'
